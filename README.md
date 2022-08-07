@@ -19,3 +19,24 @@ Run server using the following command
 ```bash
 python3 manage.py runserver
 ```
+
+## Endpoints
+Get list of all devices
+
+```bash
+GET http://localhost:8000/api/v1/devices
+```
+
+Update connection status of a device to on
+
+```bash
+PATCH http://localhost:8000/api/v1/devices/:device_id
+ -d connect_status=true
+```
+
+Update connection status of a device to off
+
+```bash
+PATCH http://localhost:8000/api/v1/devices/:device_id
+ -d connect_status=false
+```
