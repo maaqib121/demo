@@ -12,3 +12,20 @@ class DeviceView(APIView):
     def get(self, request):
         serializer = self.serializer_class(settings.DEVICES, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class DeviceDetailView(APIView):
+    def patch(self, request, device_id):
+        index, device = next(
+            ((index, device) for (index, device) in enumerate(settings.DEVICES) if device['id'] == device_id),
+            False
+        )
+        if not device:
+            return Response({'errors': 'Device object not found.'}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+        serializer = DeviceSerializer(device, request.data, partial=True)
+        if serializer.is_valid():
+            connect_status = serializer.validated_data.get('connect_status', device['connect_status'])
+            settings.DEVICES[index]['connect_status'] = connect_status
+            return Response(settings.DEVICES[index], status=status.HTTP_200_OK)
+        return Response({'errors': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
