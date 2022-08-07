@@ -8,6 +8,12 @@ Setup Virtual Environment
 python3 -m venv env
 ```
 
+Activate Virtual Environment
+
+```bash
+source env/bin/activate
+```
+
 Install the required packages by running the following command:
 
 ```bash
