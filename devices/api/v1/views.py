@@ -18,10 +18,13 @@ class DeviceDetailView(APIView):
     def patch(self, request, device_id):
         index, device = next(
             ((index, device) for (index, device) in enumerate(settings.DEVICES) if device['id'] == device_id),
-            False
+            (False, False)
         )
         if not device:
-            return Response({'errors': 'Device object not found.'}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response(
+                {'errors': {'non_field_errors': 'Device object not found.'}},
+                 status=status.HTTP_422_UNPROCESSABLE_ENTITY
+            )
 
         serializer = DeviceSerializer(device, request.data, partial=True)
         if serializer.is_valid():
