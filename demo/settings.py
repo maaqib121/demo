@@ -145,23 +145,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEVICES = [
     {
-        'id': '1',
+        'id': 1,
         'connect_status': False
     },
     {
-        'id': '2',
+        'id': 2,
         'connect_status': False
     },
     {
-        'id': '3',
+        'id': 3,
         'connect_status': False
     },
     {
-        'id': '4',
+        'id': 4,
         'connect_status': False
     },
     {
-        'id': '5',
+        'id': 5,
         'connect_status': False
     },
 ]
