@@ -14,6 +14,11 @@ Install the required packages by running the following command:
 pip3 install -r requirements.txt
 ```
 
+Create an .env file in base directory using the following sample env and set the SECRET_KEY:
+```bash
+cp .env.sample .env
+```
+
 Run server using the following command
 
 ```bash
