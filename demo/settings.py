@@ -142,3 +142,26 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEVICES = [
+    {
+        'id': '1',
+        'connect_status': False
+    },
+    {
+        'id': '2',
+        'connect_status': False
+    },
+    {
+        'id': '3',
+        'connect_status': False
+    },
+    {
+        'id': '4',
+        'connect_status': False
+    },
+    {
+        'id': '5',
+        'connect_status': False
+    },
+]
