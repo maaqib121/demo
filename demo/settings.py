@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Installed Apps
-    'django_rest_framework'
+    'django_rest_framework',
+
+    # Custom Apps
+    'devices'
 ]
 
 MIDDLEWARE = [
